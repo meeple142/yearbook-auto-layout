@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+   <div></div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js"></script>
+   <script src="pagesTemplate.js"></script>
+   <script>
+      var place = document.querySelector('div'),
+         context = {
+            title: "ya titles",
+            things: [{
+               name: "thing 1"
+            }, {
+               name: "thing 2"
+            }]
+         };
+      place.innerHTML = Handlebars.templates.pages(context);
+
+   </script>
+</body>
+
+</html>

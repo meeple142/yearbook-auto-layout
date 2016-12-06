@@ -1,0 +1,14 @@
+{
+   "name": "yearbook-auto-layout",
+   "version": "0.0.1",
+   "description": "lays out pages of pictures using handlebars",
+   "main": "index.js",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "handlebars pages.handlebars -f pagesTemplate.js",
+      "buildmon": "nodemon -e handlebars -x \"handlebars\" pages.handlebars -f pagesTemplate.js",
+      "server": "live-server --wait=300"
+   },
+   "author": "Joshua McKinney",
+   "license": "MIT"
+}
