@@ -2,6 +2,8 @@
 <html>
 
 <head>
+   <meta charset="UTF-8" />
+   <title>Year Book Layout</title>
 </head>
 
 <body>
@@ -9,17 +11,52 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.runtime.min.js"></script>
    <script src="pagesTemplate.js"></script>
    <script>
+      // three states 
+      //    not enugh pics
+      //        with some cropped
+      //        with nome cropped 
+      //    to much pics
+      //        with some cropped
+      //        with nome cropped
+      //    just right   
+      //        with some cropped
+      //        with none cropped
+
       var place = document.querySelector('div'),
-         context = {
-            title: "ya titles",
-            things: [{
-               name: "thing 1"
-            }, {
-               name: "thing 2"
-            }, {
-               name: "thing 3"
+         margins = {
+            top: 100,
+            bottom: 100,
+            left: 100,
+            right: 100
+         },
+         rowVals = {
+            height: 100,
+            vertSpace: 10, //could have this calced from number of rows and then have horizSpace the same?
+            horizSpace: 10
+         },
+         rows = [
+            [{
+               height: 300,
+               width: 500,
+               crop: {
+                  x: 0,
+                  y: 0,
+                  height: 200,
+                  width: 400,
+               },
+               focus: {
+                  x: 100,
+                  y: 100
+               }
             }]
+         ],
+         context = {
+            debug: true
          };
+
+      //turn the rows in to context with all the calcs
+
+
       place.innerHTML = Handlebars.templates.pages(context);
 
    </script>
