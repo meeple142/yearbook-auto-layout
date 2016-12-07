@@ -29,10 +29,10 @@
             left: 100,
             right: 100
          },
-         rowVals = {
-            height: 100,
-            vertSpace: 10, //could have this calced from number of rows and then have horizSpace the same?
-            horizSpace: 10
+         spacing = {
+            rowHeight: 100,
+            vert: 10, //could have this calced from number of rows and then have horizSpace the same?
+            hori: 10
          },
          rows = [
             [{
@@ -51,11 +51,13 @@
             }]
          ],
          context = {
-            debug: true
+            debug: true,
+            margins: margins,
+            spacing: spacing
          };
 
       //turn the rows in to context with all the calcs
-
+      //would be cool if could use map
 
       place.innerHTML = Handlebars.templates.pages(context);
 
